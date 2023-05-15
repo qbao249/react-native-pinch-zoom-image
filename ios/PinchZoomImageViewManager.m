@@ -1,6 +1,6 @@
 #import <React/RCTViewManager.h>
 #import "RNPhotoView.h"
-#import "FFFastImageSource.h"
+// #import "FFFastImageSource.h"
 
 @interface PinchZoomImageViewManager : RCTViewManager
 @end
@@ -13,8 +13,9 @@ RCT_EXPORT_MODULE(PinchZoomImageView)
     return [[RNPhotoView alloc] initWithBridge:self.bridge];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(source, FFFastImageSource)
-RCT_EXPORT_VIEW_PROPERTY(loadingIndicatorSrc, NSString)
+// RCT_EXPORT_VIEW_PROPERTY(source, FFFastImageSource)
+RCT_EXPORT_VIEW_PROPERTY(source, NSDictionary)
+RCT_REMAP_VIEW_PROPERTY(loadingIndicatorSource, loadingIndicatorSrc, NSString)
 
 RCT_REMAP_VIEW_PROPERTY(maximumZoomScale, maxZoomScale, CGFloat)
 RCT_REMAP_VIEW_PROPERTY(minimumZoomScale, minZoomScale, CGFloat)

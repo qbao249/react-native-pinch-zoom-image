@@ -11,7 +11,15 @@ export default function App() {
         style={styles.image}
         maximumZoomScale={2}
         minimumZoomScale={1}
-        // onLoad={(event: any) => console.log('onLoad')}
+        onLoad={(event: any) =>
+          console.log('onLoad', JSON.stringify(event?.nativeEvent))
+        }
+        onLoadStart={(event: any) =>
+          console.log('onLoadStart', JSON.stringify(event?.nativeEvent))
+        }
+        onLoadEnd={(event: any) =>
+          console.log('onLoadEnd', JSON.stringify(event?.nativeEvent))
+        }
       />
     </View>
   );
